@@ -62,7 +62,7 @@ class UserProfile extends React.Component {
 		API.saveNewDay({
 			author: this.state.currentId
 		}).then(() => {
-			console.log('day saved')
+			API.getDays().then((result) => { this.setState({ days: result.data }) })
 		})
 	}
 
