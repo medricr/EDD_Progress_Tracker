@@ -25,6 +25,9 @@ class UserProfile extends React.Component {
 		modalOpen: false,
 		activeItem: {}
 	}
+
+
+	
 // COMPONENT UTITLITIES
 // ==================================
 	handleInputChange = (event) => {
@@ -51,60 +54,10 @@ class UserProfile extends React.Component {
 			API.getDays().then((result)=>{this.setState({days: result.data})})
 		)
 	}
+	
 // ===================================
 // COMPONENT METHODS
 // +++++++++++++++++++++++++++++++++++
-	// saveUserNote = () => {
-	// 	API.saveUserNote({
-	// 		title: this.state.title,
-	// 		content: this.state.content,
-	// 		author: this.state.currentId
-	// 	}).then(()=> {
-	// 		API.getNotes().then((result)=> {this.setState({notes: result.data})})
-	// 	})
-	// }
-
-	// deleteNote = (buttonId) => {
-	// 	API.deleteNote({
-	// 		currentId: this.state.currentId,
-	// 		noteId: buttonId
-	// 	}).then(()=> {
-	// 		API.getNotes().then((result)=> {this.setState({notes: result.data})})
-	// 	})
-	// }
-	// updateNote = (item) => {
-
-	// 	let titleUpdate = "";
-	// 	let contentUpdate = "";
-
-	// 	// The following if/else blocks ensure that even if the user only updates 
-	// 	// one field of the note, the other will not be cleared
-	// 	if(this.state.title === ""){
-	// 		titleUpdate = item.title
-	// 	} else {
-	// 		titleUpdate = this.state.title;
-	// 	}
-
-	// 	if(this.state.content === ""){
-	// 		contentUpdate = item.content
-	// 	} else {
-	// 		contentUpdate = this.state.content
-	// 	}
-		
-	// 	API.updateNote({
-	// 		noteId: item._id,
-	// 		noteTitle: titleUpdate,
-	// 		noteContent: contentUpdate
-	// 	}).then(()=> {
-	// 		API.getNotes().then((result)=> {this.setState({notes: result.data})})
-	// 		// State is then cleared to ensure that if the user goes to update another note, the information
-	// 		// from the first update is not retained
-	// 		this.setState({title: "", content: "", modalOpen: false})
-			
-	// 	})
-	// }
-
-	// NEW SHIT
 	saveNewDay = () => {
 		API.saveNewDay({
 			author: this.state.currentId
@@ -123,17 +76,16 @@ class UserProfile extends React.Component {
 	}
 
 	updateDay = (name, id) => {
-		console.log(name)
-		console.log(id)
-		console.log("update function passing works lol")
 		API.updateDay({
 			name: name,
 			id: id
-		}).then((result)=> { console.log(result)});
-		
+		}).then(()=>{
+			API.getDays().then((result)=> {this.setState({days: result.data})})
+		});		
 	}
 // +++++++++++++++++++++++++++++++++++
 	render() {
+
 		return( 
 			<Container>		
 				<div className='row new-ticket-row'>
@@ -172,15 +124,6 @@ class UserProfile extends React.Component {
 												<td>{item.sucessful_calls}</td>
 												<td>{item.total_calls}</td>
 											</tr>
-											{/* <tr>
-												<td><Button size='sm'>Another One</Button></td>
-												<td><Button size='sm'>Another One</Button></td>
-												<td><Button size='sm'>Another One</Button></td>
-												<td><Button size='sm'>Another One</Button></td>
-												<td><Button size='sm'>Another One</Button></td>
-												<td><Button size='sm'>Another One</Button></td>
-												<td><Button size='sm'>Another One</Button></td>
-											</tr> */}
 										</tbody>
 									</Table>
 									<Button onClick={() => this.deleteDay(item._id)} color="danger" className="button">Delete Ticket</Button>{' '}
