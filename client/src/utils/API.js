@@ -33,21 +33,6 @@ export default {
 		return axios.get('/api/user/profile');
 	},
 
-	saveUserNote: function(info){
-		return axios.post('/api/user/profile', info);
-	},
-
-	getNotes: function(){
-		return axios.get('/api/user/notes')
-	},
-
-	deleteNote: function(info){
-		return axios.post('/api/user/notes', info)
-	},
-
-	updateNote: function(info){
-		return axios.put('/api/user/notes', info)
-	},
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	saveNewDay: function(info){
 		return axios.post('/api/days/save', info);

@@ -1,5 +1,4 @@
 import React from 'react';
-// import "bootstrap/dist/css/bootstrap.min.css";
 import { 
 	Container, 
 	Button, 
@@ -12,22 +11,17 @@ import {
 import API from '../../utils/API';
 import TicketModal from '../TicketModal';
 
-// import './Stylesheet.css';
-
 class UserProfile extends React.Component {
 
 	state = {
 		currentId: "",
 		title: "",
 		content: "",
-		// notes: [],
 		days: [],
 		modalOpen: false,
 		activeItem: {}
 	}
 
-
-	
 // COMPONENT UTITLITIES
 // ==================================
 	handleInputChange = (event) => {
@@ -87,15 +81,10 @@ class UserProfile extends React.Component {
 	render() {
 
 		return( 
-			<Container>		
-				<div className='row'>
-					<div className='col-xs-12 new-ticket-row'>
-						<Button onClick={this.saveNewDay} color='warning' id='new-ticket-btn'> Create New Day {':^) '}</Button>
-					</div>
-				</div>
-					
-				<div className='row table-row'>
-					<div className='col-xs-12'>
+			<div className='row'>
+				<div className='col-xs-12'>
+					<Container>
+						<Button onClick={this.saveNewDay} color='warning' id='new-ticket-btn'> Create New Day </Button>
 						<ListGroup>
 							{this.state.days.map((item) => (
 								<ListGroupItem key={item._id}>
@@ -139,13 +128,13 @@ class UserProfile extends React.Component {
 										day_id={item._id}
 									/>
 									<br />
-									<Button onClick={() => this.deleteDay(item._id)} color="danger" id="delete-btn">Delete Ticket</Button>{' '}
-								</ListGroupItem>							
+									<Button onClick={() => this.deleteDay(item._id)} id="delete-btn">Delete Ticket</Button>{' '}
+								</ListGroupItem>
 							))}
-						</ListGroup>					
-					</div>
+						</ListGroup>
+					</Container>
 				</div>
-			</Container>
+			</div>			
 		)
 	}
 }

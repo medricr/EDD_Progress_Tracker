@@ -7,7 +7,7 @@ module.exports = function(app){
 			'/api/user/login',
 			'/api/user/logout',
 			'/api/user/profile',
-			'/api/user/notes',
+			// API routes for creation, reading, update, and deletion of 'day' tickets
 			'/api/days/save',
 			'/api/days/display',
 			'/api/days/delete',

@@ -26,6 +26,9 @@ const Splashpage = () =>{
 							<br />
 							<br />
 							Once you've signed in / signed up, navigate to the profile page. The yellow button at the top will let you start a new collection, or day, of calls. The red button will let you delete that day of records if its too depressing to look at. The blue button with the bleak quote will let you update each day. Once you're ready to update, just click on the cool smiley face to add one to each column {':^)'}
+							<br />
+							<br />
+							All joking aside, the people working the phones at the EDD are doing a fantastic job, and I harbor no ill will against them. This is not meant to be a condemnation of anyone working there, as I'm sure they are doing their best. 
 						</CardText>
 					</CardBody>
 				</Card>

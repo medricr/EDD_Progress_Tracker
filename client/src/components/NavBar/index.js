@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, NavbarBrand, Collapse, NavbarToggler, UncontrolledDropdown, DropdownToggle, DropdownMenu, NavLink } from 'reactstrap';
+import { Navbar, Nav, NavbarBrand } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 class NavBar extends React.Component {
@@ -26,42 +26,25 @@ class NavBar extends React.Component {
 						<NavbarBrand tag={Link} to='/'>
 							EDD "Progress" Tracker || Welcome: {this.props.currentUser.username}
 						</NavbarBrand>
-					}
-					{/* <NavbarToggler onClick={this.toggle} />
-					<Collapse isOpen={this.state.isOpen} navbar> */}
-						<Nav className="ml-auto" navbar>
-							{/* <UncontrolledDropdown nav inNavbar>
-								<DropdownToggle nav caret>
-									More
-							</DropdownToggle> */}
-								{/* <DropdownMenu right> */}
-									{!this.props.userStatus ?
-										<NavLink>
-											<Link className="nav-link" to='/login'>Login</Link>
-										</NavLink>
+					}					
+						<Nav className="ml-auto" navbar>							
+							{!this.props.userStatus ?
+							
+									<Link className="nav-link" to='/login'>Login</Link>								
 
-										:
+								:
 
-										<NavLink>
-											<Link className='nav-link' to='/' onClick={this.props.logoutUser}>Logout</Link>
-										</NavLink>
-									}
-									{!this.props.userStatus ?
-										<NavLink>
-											<Link className="nav-link" to='/register'>Signup</Link>
-										</NavLink>
+									<Link className='nav-link' to='/' onClick={this.props.logoutUser}>Logout</Link>
+							}
+							{!this.props.userStatus ?
 
-										:
+									<Link className="nav-link" to='/register'>Signup</Link>
+								
+								:
 
-										<NavLink>
-											<Link className='nav-link' to='/profile'>Profile</Link>
-										</NavLink>
-									}
-									
-								{/* </DropdownMenu>
-							</UncontrolledDropdown> */}
+									<Link className='nav-link' to='/profile'>Profile</Link>										
+							}											
 						</Nav>
-					{/* </Collapse> */}
 				</Navbar>
 			</div>
 		)
