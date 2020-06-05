@@ -2,21 +2,15 @@ import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { 
 	Container, 
-	FormGroup, 
-	Label, 
-	Input, 
 	Button, 
 	ListGroup, 
 	ListGroupItem, 
 	ListGroupItemHeading, 
-	ListGroupItemText,
-	Modal,
-	ModalBody,
-	ModalHeader,
-	ModalFooter,
 	Table
 	} from 'reactstrap';
+
 import API from '../../utils/API';
+import TicketModal from '../TicketModal';
 
 // import './Stylesheet.css';
 
@@ -159,7 +153,6 @@ class UserProfile extends React.Component {
 										</thead>
 										<tbody>
 											<tr>
-												{/* <th scope='row' /> */}
 												<td>{item.queue_too_long}</td>
 												<td>{item.high_call_volume}</td>
 												<td>{item.dead_air}</td>
@@ -168,35 +161,33 @@ class UserProfile extends React.Component {
 												<td>{item.sucessful_calls}</td>
 												<td>{item.total_calls}</td>
 											</tr>
+											{/* <tr>
+												<td><Button size='sm'>Another One</Button></td>
+												<td><Button size='sm'>Another One</Button></td>
+												<td><Button size='sm'>Another One</Button></td>
+												<td><Button size='sm'>Another One</Button></td>
+												<td><Button size='sm'>Another One</Button></td>
+												<td><Button size='sm'>Another One</Button></td>
+												<td><Button size='sm'>Another One</Button></td>
+											</tr> */}
 										</tbody>
 									</Table>
-									<Button onClick={() => this.deleteDay(item._id)} color="danger" className="button">DELETE NOTE</Button>{' '}
-									{/* <Button onClick={()=> this.toggle(item)} color="warning">EDIT NOTE</Button> */}
-								</ListGroupItem>
+									<Button onClick={() => this.deleteDay(item._id)} color="danger" className="button">Delete Ticket</Button>{' '}
+									<TicketModal
+										total_calls={item.total_calls}
+										sucessful_calls={item.sucessful_calls}
+										high_call_volume={item.high_call_volume}
+										queue_too_long={item.queue_too_long}
+										dead_air={item.dead_air}
+										feedback_loop={item.feedback_loop}
+										busy_signal={item.busy_signal}
+										start_time={item.start_time}
+									/>
+								</ListGroupItem>							
 							))}
-						</ListGroup>
-						<Modal isOpen={this.state.modalOpen} toggle={this.toggle}>
-							<ModalHeader >
-								<FormGroup>
-									<Label>Note Title</Label>
-									<Input type='text' name='title' onChange={this.handleInputChange} placeholder={this.state.activeItem.title} />
-
-								</FormGroup>
-							</ModalHeader>
-							<ModalBody>
-								<FormGroup>
-									<Label>Note Body</Label>
-									<Input type='text' name='content' onChange={this.handleInputChange} placeholder={this.state.activeItem.content} />
-								</FormGroup>
-							</ModalBody>
-							<ModalFooter>
-								<Button onClick={() => { this.updateNote(this.state.activeItem) }} color="warning">UPDATE NOTE</Button>
-							</ModalFooter>
-						</Modal> 
+						</ListGroup>					
 					</div>
 				</div>
-				{' '}
-				
 			</Container>
 		)
 	}
