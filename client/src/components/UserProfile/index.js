@@ -5,11 +5,10 @@ import {
 	ListGroup, 
 	ListGroupItem, 
 	ListGroupItemHeading, 
-	Table
+	Table,
+	Jumbotron
 	} from 'reactstrap';
-
 import API from '../../utils/API';
-import TicketModal from '../TicketModal';
 
 class UserProfile extends React.Component {
 
@@ -81,17 +80,19 @@ class UserProfile extends React.Component {
 	render() {
 
 		return( 
-			<div className='row'>
-				<div className='col-xs-12'>
-					<Container>
+			<div>
+				{/* <div className='col-md-12'> */}
+					<Jumbotron>
+						<br />
 						<Button onClick={this.saveNewDay} color='warning' id='new-ticket-btn'> Create New Day </Button>
+						<br />
 						<ListGroup>
 							{this.state.days.map((item) => (
 								<ListGroupItem key={item._id}>
 									<ListGroupItemHeading>
 										{item.start_time}
 									</ListGroupItemHeading>
-									<Table>
+									<Table responsive>
 										<thead>
 											<tr>
 												<th>Too Many Callers in Queue</th>
@@ -113,28 +114,23 @@ class UserProfile extends React.Component {
 												<td>{item.sucessful_calls}</td>
 												<td>{item.total_calls}</td>
 											</tr>
+											<tr>
+												<td><Button onClick={() => this.updateDay('queue_too_long', item._id)}>+</Button></td>
+												<td><Button onClick={() => this.updateDay('high_call_volume', item._id)}>+</Button></td>
+												<td><Button onClick={() => this.updateDay('dead_air', item._id)}>+</Button></td>
+												<td><Button onClick={() => this.updateDay('feedback_loop', item._id)}>+</Button></td>
+												<td><Button onClick={() => this.updateDay('busy_signal', item._id)}>+</Button></td>
+												<td><Button onClick={() => this.updateDay('sucessful_calls', item._id)}>+</Button></td>
+											</tr>
 										</tbody>
 									</Table>
-									<TicketModal
-										total_calls={item.total_calls}
-										sucessful_calls={item.sucessful_calls}
-										high_call_volume={item.high_call_volume}
-										queue_too_long={item.queue_too_long}
-										dead_air={item.dead_air}
-										feedback_loop={item.feedback_loop}
-										busy_signal={item.busy_signal}
-										start_time={item.start_time}
-										update={this.updateDay}
-										day_id={item._id}
-									/>
 									<br />
-									<Button onClick={() => this.deleteDay(item._id)} id="delete-btn">Delete Ticket</Button>{' '}
+									<Button onClick={() => this.deleteDay(item._id)} id="delete-btn" color='info'>{item.header_quote}</Button>{' '}
 								</ListGroupItem>
 							))}
 						</ListGroup>
-					</Container>
-				</div>
-			</div>			
+					</Jumbotron>
+		 	</div>	
 		)
 	}
 }

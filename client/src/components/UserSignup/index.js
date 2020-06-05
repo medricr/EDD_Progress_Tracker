@@ -3,13 +3,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Form, FormGroup, Label, Input, Button, Container } from 'reactstrap'
 import { Redirect } from 'react-router-dom';
 
-class UserSignup extends React.Component {
+const UserSignup = (props)=> {
 
-	render(){
+	const {
+		userStatus,
+		handleInputChange,
+		registerUser
+	} = props
+
 		return(
 			<Container>
-				{this.props.userStatus ? 
-				
+				{userStatus ? 
 					<Redirect to='/' />
 					
 					:
@@ -17,19 +21,17 @@ class UserSignup extends React.Component {
 					<Form>
 						<FormGroup>
 							<Label>Username</Label>
-							<Input type="text" name="username" onChange={this.props.handleInputChange} />
+							<Input type="text" name="username" onChange={handleInputChange} />
 						</FormGroup>
 						<FormGroup>
 							<Label>Password</Label>
-							<Input type="password" name="password" onChange={this.props.handleInputChange} />
+							<Input type="password" name="password" onChange={handleInputChange} />
 						</FormGroup>
-						<Button onClick={this.props.registerUser}>Register & Login</Button>
+						<Button onClick={registerUser}>Register & Login</Button>
 					</Form>
-				}
-				
+				}				
 			</Container>
 		)
-	}
 }
 
 export default UserSignup;
