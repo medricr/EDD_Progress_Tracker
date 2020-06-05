@@ -29,7 +29,7 @@ const TicketModal = (props) => {
 			<div className='row'>
 				<div className='col-xs-12'>
 					<Button onClick={toggle} id='modal-button' color='info'> {buttonName} </Button>
-					<Modal className='modal-xl' isOpen={modal} toggle={toggle}>
+					<Modal isOpen={modal} toggle={toggle}>
 						<ModalHeader toggle={toggle}>{start_time}</ModalHeader>
 						<ModalBody>
 							<Table>
