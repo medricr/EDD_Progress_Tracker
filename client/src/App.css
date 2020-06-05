@@ -21,4 +21,23 @@
   color: #09d3ac;
 }
 
+#modal-button {
+	margin: 0 auto;
+	display: block;
+}
+
+#ticket-modal {
+	text-align: center;
+}
+
+#new-ticket-btn {
+	margin: 0 auto;
+	display: block;
+}
+
+#delete-btn {
+	margin: 0 auto;
+	display: block;
+}
+
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import { 
 	Container, 
 	Button, 
@@ -88,9 +88,9 @@ class UserProfile extends React.Component {
 
 		return( 
 			<Container>		
-				<div className='row new-ticket-row'>
-					<div className='col-md-12'>
-						<Button onClick={this.saveNewDay} color='danger'>Create New Day {':^)'}</Button>
+				<div className='row'>
+					<div className='col-md-12 new-ticket-row'>
+						<Button onClick={this.saveNewDay} color='warning' id='new-ticket-btn'> Create New Day {':^) '}</Button>
 					</div>
 				</div>
 					
@@ -126,7 +126,6 @@ class UserProfile extends React.Component {
 											</tr>
 										</tbody>
 									</Table>
-									<Button onClick={() => this.deleteDay(item._id)} color="danger" className="button">Delete Ticket</Button>{' '}
 									<TicketModal
 										total_calls={item.total_calls}
 										sucessful_calls={item.sucessful_calls}
@@ -139,6 +138,8 @@ class UserProfile extends React.Component {
 										update={this.updateDay}
 										day_id={item._id}
 									/>
+									<br />
+									<Button onClick={() => this.deleteDay(item._id)} color="danger" id="delete-btn">Delete Ticket</Button>{' '}
 								</ListGroupItem>							
 							))}
 						</ListGroup>					

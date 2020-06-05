@@ -26,8 +26,8 @@ const TicketModal = (props) => {
 
 	return(
 		<div id='ticket-modal'>
-			{console.log(buttonNames)}
-			<Button onClick={toggle} id='expand-ticket-btn'> {buttonName} </Button>
+			{/* {console.log(buttonNames)} */}
+			<Button onClick={toggle} id='modal-button' color='info'> {buttonName} </Button>
 			<Modal className = 'modal-xl'isOpen={modal} toggle={toggle}>
 				<ModalHeader toggle={toggle}>{start_time}</ModalHeader>
 				<ModalBody>

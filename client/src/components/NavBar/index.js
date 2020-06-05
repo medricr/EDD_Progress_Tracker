@@ -18,7 +18,7 @@ class NavBar extends React.Component {
 				<Navbar color="light" light expand="md" className="navbar-static-top">
 					{!this.props.userStatus ?	
 						<NavbarBrand tag={Link} to='/'>
-							EDD "Progress" Tracker
+							EDD "Progress" Tracker -  {'1(800)-300-5616'}
 						</NavbarBrand>
 
 						:
