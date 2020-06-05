@@ -89,13 +89,13 @@ class UserProfile extends React.Component {
 		return( 
 			<Container>		
 				<div className='row'>
-					<div className='col-md-12 new-ticket-row'>
+					<div className='col-xs-12 new-ticket-row'>
 						<Button onClick={this.saveNewDay} color='warning' id='new-ticket-btn'> Create New Day {':^) '}</Button>
 					</div>
 				</div>
 					
 				<div className='row table-row'>
-					<div className='col-md-12'>
+					<div className='col-xs-12'>
 						<ListGroup>
 							{this.state.days.map((item) => (
 								<ListGroupItem key={item._id}>

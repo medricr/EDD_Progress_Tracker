@@ -26,45 +26,51 @@ const TicketModal = (props) => {
 
 	return(
 		<div id='ticket-modal'>
+			<div className='row'>
+				<div className='col-xs-12'>
+					<Button onClick={toggle} id='modal-button' color='info'> {buttonName} </Button>
+					<Modal className='modal-xl' isOpen={modal} toggle={toggle}>
+						<ModalHeader toggle={toggle}>{start_time}</ModalHeader>
+						<ModalBody>
+							<Table>
+								<thead>
+									<tr>
+										<th>Too Many Callers in Queue</th>
+										<th>High Call Volume</th>
+										<th>Dead Air</th>
+										<th>Feedback Loop</th>
+										<th>Busy Signal</th>
+										<th>Talked to a Representetive {' :^)'}</th>
+										<th>Total # of Calls</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>{queue_too_long}</td>
+										<td>{high_call_volume}</td>
+										<td>{dead_air}</td>
+										<td>{feedback_loop}</td>
+										<td>{busy_signal}</td>
+										<td>{sucessful_calls}</td>
+										<td>{total_calls}</td>
+									</tr>
+									<tr>
+										<td><Button onClick={() => update("queue_too_long", day_id)}>{':^)'}</Button></td>
+										<td><Button onClick={() => update("high_call_volume", day_id)}>{':^)'}</Button></td>
+										<td><Button onClick={() => update("dead_air", day_id)}>{':^)'}</Button></td>
+										<td><Button onClick={() => update("feedback_loop", day_id)}>{':^)'}</Button></td>
+										<td><Button onClick={() => update("busy_signal", day_id)}>{':^)'}</Button></td>
+										<td><Button onClick={() => update("sucessful_calls", day_id)}>{':^)'}</Button></td>
+									</tr>
+								</tbody>
+							</Table>
+						</ModalBody>
+					</Modal>
+				</div>
+			</div>
+			
 			{/* {console.log(buttonNames)} */}
-			<Button onClick={toggle} id='modal-button' color='info'> {buttonName} </Button>
-			<Modal className = 'modal-xl'isOpen={modal} toggle={toggle}>
-				<ModalHeader toggle={toggle}>{start_time}</ModalHeader>
-				<ModalBody>
-					<Table>
-						<thead>
-							<tr>
-								<th>Too Many Callers in Queue</th>
-								<th>High Call Volume</th>
-								<th>Dead Air</th>
-								<th>Feedback Loop</th>
-								<th>Busy Signal</th>
-								<th>Talked to a Representetive {' :^)'}</th>
-								<th>Total # of Calls</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>{queue_too_long}</td>
-								<td>{high_call_volume}</td>
-								<td>{dead_air}</td>
-								<td>{feedback_loop}</td>
-								<td>{busy_signal}</td>
-								<td>{sucessful_calls}</td>
-								<td>{total_calls}</td>
-							</tr>
-							<tr>
-								<td><Button onClick={() => update("queue_too_long", day_id)}>{':^)'}</Button></td>
-								<td><Button onClick={() => update("high_call_volume", day_id)}>{':^)'}</Button></td>
-								<td><Button onClick={() => update("dead_air", day_id)}>{':^)'}</Button></td>
-								<td><Button onClick={() => update("feedback_loop", day_id)}>{':^)'}</Button></td>
-								<td><Button onClick={() => update("busy_signal", day_id)}>{':^)'}</Button></td>
-								<td><Button onClick={() => update("sucessful_calls", day_id)}>{':^)'}</Button></td>
-							</tr>
-						</tbody>
-					</Table>
-				</ModalBody>
-			</Modal>
+			
 		</div>
 	)
 }
