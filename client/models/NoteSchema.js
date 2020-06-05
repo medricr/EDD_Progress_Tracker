@@ -15,7 +15,7 @@ NoteSchema.pre('save', function (next) {
 	console.log(this)
 	console.log(this.content)
 	if (!this.title || !this.content) {
-		console.group("cannot save empty note")
+		console.log("cannot save empty note")
 	}
 	else {
 		this._id = new mongoose.Types.ObjectId();

@@ -10,7 +10,7 @@ const routes = require('./routes');
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(session({secret: 'fortheemperor', resave: false}));
+app.use(session({secret: 'allisdust', resave: false}));
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -35,7 +35,7 @@ app.get("*", function (req, res) {
 
 // Establish connection to database
 // Anything following localhost/ can be changed to fit whatever naming convention fits the project best 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/TEST', { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/edd_progress', { useNewUrlParser: true });
 const connection = mongoose.connection;
 
 // Check connection to db

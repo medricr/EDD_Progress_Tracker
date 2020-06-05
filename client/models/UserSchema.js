@@ -10,7 +10,8 @@ const UserSchema = new Schema({
 	username: {type: String},
 	password: {type: String}, 
 	bio: {type: String},
-	notes: [{type: Schema.Types.ObjectId, ref: 'Note'}]
+	notes: [{type: Schema.Types.ObjectId, ref: 'Note'}],
+	days: [{type: Schema.Types.ObjectId, ref: 'Day'}]
 	
 });
 

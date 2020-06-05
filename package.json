@@ -1,7 +1,7 @@
 {
-  "name": "MERN-Boilerplate",
+  "name": "edd_progress_tracker",
   "version": "1.0.0",
-  "description": "A basic set of boilerplate code for creating applications on a MERN stack.",
+  "description": "A simple MERN app which allows the user to log the result of their calls to the EDD Customer Support Service Center",
   "main": "server.js",
   "scripts": {
     "begin": "npm run build && node server.js",
@@ -15,15 +15,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/medricr/MERN-Boilerplate.git"
+    "url": "git+https://github.com/medricr/EDD_Progress_Tracker.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Medric Riley",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/medricr/MERN-Boilerplate/issues"
+    "url": "https://github.com/medricr/EDD_Progress_Tracker/issues"
   },
-  "homepage": "https://github.com/medricr/MERN-Boilerplate#readme",
+  "homepage": "https://github.com/medricr/EDD_Progress_Trackere#readme",
   "dependencies": {
     "axios": "^0.19.0",
     "bcryptjs": "^2.4.3",
@@ -41,5 +41,6 @@
     "passport-local": "^1.0.0",
     "react-router-dom": "^5.1.2",
     "reactstrap": "^8.1.1"
-  }
+  },
+  "devDependencies": {}
 }

@@ -12,21 +12,19 @@ class NavBar extends React.Component {
 		this.setState((prevState)=> ({isOpen: !prevState}));
 	}
 
-
-	
 	render() {
 		return (
 			<div>
 				<Navbar color="light" light expand="md" className="navbar-static-top">
 					{!this.props.userStatus ?	
 						<NavbarBrand tag={Link} to='/'>
-							MERN Boilerplate
+							EDD "Progress" Tracker
 						</NavbarBrand>
 
 						:
 
 						<NavbarBrand tag={Link} to='/'>
-							MERN Boilerplate || Welcome: {this.props.currentUser.username}
+							EDD "Progress" Tracker || Welcome: {this.props.currentUser.username}
 						</NavbarBrand>
 					}
 					<NavbarToggler onClick={this.toggle} />

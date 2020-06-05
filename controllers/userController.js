@@ -23,6 +23,8 @@ module.exports = {
 			res.json("no user found")
 		}
 	},
+
+	
 // Saves note to the notes collection with a title, body, and author id. Once completed, 
 // the note is pushed onto an array of note id's in the user document.
 // TESTED - COMMITED 1/14/2020
@@ -46,6 +48,7 @@ module.exports = {
 				if (err) {
 					return res.json(err);
 				}
+				console.log("updated user => ", updatedUser)
 				return res.json(updatedUser);
 			});
 		});	

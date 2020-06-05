@@ -7,7 +7,11 @@ module.exports = function(app){
 			'/api/user/login',
 			'/api/user/logout',
 			'/api/user/profile',
-			'/api/user/notes'
+			'/api/user/notes',
+			'/api/days/save',
+			'/api/days/display',
+			'/api/days/delete',
+			'/api/days/update'
 			], {target: "http://localhost:3001"})
 	)
 }

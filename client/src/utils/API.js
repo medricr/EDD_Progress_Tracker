@@ -47,7 +47,22 @@ export default {
 
 	updateNote: function(info){
 		return axios.put('/api/user/notes', info)
+	},
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	saveNewDay: function(info){
+		return axios.post('/api/days/save', info);
+	},
+
+	getDays: function(){
+		console.log("getting days")
+		return axios.get('/api/days/display')
+	},
+
+	deleteDay: function(info){
+		return axios.post('/api/days/delete', info)
 	}
+
+
 
 	
 }

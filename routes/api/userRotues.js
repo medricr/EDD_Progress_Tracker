@@ -3,7 +3,7 @@ const passport = require('passport');
 // Imports all routes from 
 const userController = require('./../../controllers/userController');
 const authController = require('../../controllers/authController');
-
+// const dayController = require('../../controllers/dayController')
 // router.route('/insert')
 // 	.post(userController.createUser);
 
@@ -28,6 +28,9 @@ router.route('/notes')
 	.get(userController.getNotes)
 	.post(userController.deleteNote)
 	.put(userController.updateNote);
+
+// router.route('/save')
+// 	.post(dayController.saveNewDay);
 
 
 module.exports = router;
