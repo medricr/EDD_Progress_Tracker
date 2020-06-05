@@ -11,6 +11,8 @@ const TicketModal = (props) => {
 		feedback_loop,
 		busy_signal,
 		start_time,
+		day_id,
+		update,
 		end_time
 	} = props
 
@@ -46,13 +48,13 @@ const TicketModal = (props) => {
 								<td>{total_calls}</td>
 							</tr>
 							<tr>
-								<td><Button >I Have no Mouth, and I Must Scream</Button></td>
-								<td><Button >I Have no Mouth, and I Must Scream</Button></td>
-								<td><Button >I Have no Mouth, and I Must Scream</Button></td>
-								<td><Button >I Have no Mouth, and I Must Scream</Button></td>
-								<td><Button >I Have no Mouth, and I Must Scream</Button></td>
-								<td><Button >I Have no Mouth, and I Must Scream</Button></td>
-								<td><Button >I Have no Mouth, and I Must Scream</Button></td>
+								<td><Button onClick={() => update("queue_too_long", day_id)}>I Have no Mouth, and I Must Scream</Button></td>
+								<td><Button id='high_call_volume'>I Have no Mouth, and I Must Scream</Button></td>
+								<td><Button id='dead_air'>I Have no Mouth, and I Must Scream</Button></td>
+								<td><Button id='feedback_loop'>I Have no Mouth, and I Must Scream</Button></td>
+								<td><Button id='busy_signal'>I Have no Mouth, and I Must Scream</Button></td>
+								<td><Button id='sucessful_calls'>I Have no Mouth, and I Must Scream</Button></td>
+								<td><Button id='total_calls'>I Have no Mouth, and I Must Scream</Button></td>
 							</tr>
 						</tbody>
 					</Table>

@@ -72,6 +72,32 @@ module.exports = {
 		// if error, return that error
 		// else, return updated note
 
+	updateTicket: function(req, res){
+
+		console.log(req.body)
+
+		let dayId = req.body.id
+		let updateField = req.body.name
+
+		console.log("dayId => ", dayId);
+		console.log("updateField => ", updateField)
+
+		db.Day.findOneAndUpdate(
+			{_id: dayId},
+			{$inc: 
+				{
+					total_calls: 1,
+					[`${updateField}`]: 1
+				}
+			}
+		).exec((err, updatedDay)=> {
+			if(err){
+				return res.json(err)
+			}
+			return res.json(updatedDay)
+		})
+	},
+
 
 	// DELETE DAY
 	// function (request, response)

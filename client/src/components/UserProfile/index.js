@@ -121,9 +121,20 @@ class UserProfile extends React.Component {
 			API.getDays().then((result)=> {this.setState({days: result.data})})
 		})
 	}
+
+	updateDay = (name, id) => {
+		console.log(name)
+		console.log(id)
+		console.log("update function passing works lol")
+		API.updateDay({
+			name: name,
+			id: id
+		}).then((result)=> { console.log(result)});
+		
+	}
 // +++++++++++++++++++++++++++++++++++
 	render() {
-		return(
+		return( 
 			<Container>		
 				<div className='row new-ticket-row'>
 					<div className='col-md-12'>
@@ -182,6 +193,8 @@ class UserProfile extends React.Component {
 										feedback_loop={item.feedback_loop}
 										busy_signal={item.busy_signal}
 										start_time={item.start_time}
+										update={this.updateDay}
+										day_id={item._id}
 									/>
 								</ListGroupItem>							
 							))}

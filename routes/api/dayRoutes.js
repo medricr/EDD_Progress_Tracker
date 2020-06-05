@@ -12,6 +12,7 @@ router.route('/delete')
 	.post(dayController.deleteDay);
 
 router.route('/update')
+	.put(dayController.updateTicket)
 	
 
 

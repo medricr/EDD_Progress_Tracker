@@ -60,6 +60,11 @@ export default {
 
 	deleteDay: function(info){
 		return axios.post('/api/days/delete', info)
+	},
+
+	updateDay: function(info){
+		console.log("API.js update info entered=> ", info);
+		return axios.put('/api/days/update', info)
 	}
 
 
