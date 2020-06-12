@@ -81,7 +81,6 @@ class UserProfile extends React.Component {
 
 		return( 
 			<div>
-				{/* <div className='col-md-12'> */}
 					<Jumbotron>
 						<br />
 						<Button onClick={this.saveNewDay} color='warning' id='new-ticket-btn'> Create New Day </Button>
