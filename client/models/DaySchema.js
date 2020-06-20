@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const quotes = require('./buttonNames.json');
+// const quotes = require('./buttonNames.json');
 
 mongoose.promise = Promise;
 
@@ -16,7 +16,7 @@ const DaySchema = new Schema({
 	busy_signal: {type: Number, default: 0},
 	start_time: {type: String, default: ""},
 	end_time: {type: String, default: ""},
-	header_quote: {type: String, default: ""},
+	// header_quote: {type: String, default: ""},
 	author: {type: Schema.Types.ObjectId, ref: 'User'}
 });
 
@@ -25,8 +25,8 @@ DaySchema.pre('save', function(next){
 	console.log('daySchema pre hook entered');
 	console.log(this);
 	console.log(this.content);
-	let num = Math.floor(Math.random() * quotes.length);
-	this.header_quote = quotes[num];
+	// let num = Math.floor(Math.random() * quotes.length);
+	// this.header_quote = quotes[num];
 	this._id = new mongoose.Types.ObjectId();
 	next();
 });

@@ -83,7 +83,7 @@ class UserProfile extends React.Component {
 			<div>
 					<Jumbotron>
 						<br />
-						<Button onClick={this.saveNewDay} color='warning' id='new-ticket-btn'> Create New Day </Button>
+						<Button onClick={this.saveNewDay} color='warning' id='new-ticket-btn'> Create New Ticket </Button>
 						<br />
 						<ListGroup>
 							{this.state.days.map((item) => (
@@ -124,7 +124,7 @@ class UserProfile extends React.Component {
 										</tbody>
 									</Table>
 									<br />
-									<Button onClick={() => this.deleteDay(item._id)} id="delete-btn" color='info'>{item.header_quote}</Button>{' '}
+									<Button onClick={() => this.deleteDay(item._id)} id="delete-btn" color='info'>Delete Ticket</Button>{' '}
 								</ListGroupItem>
 							))}
 						</ListGroup>
