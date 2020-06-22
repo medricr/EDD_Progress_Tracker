@@ -19,14 +19,14 @@ const Splashpage = () =>{
 							 All joking aside, the people working the phones at the EDD are doing a fantastic job, and I harbor no ill will against them. This is not meant to be a condemnation of anyone working there as they are, like the rest of us, dealing with an unprecidented set of circumstances. 
 							 <br />
 							 <br />
-							 This project was born out of frustration after I called the EDD roughly 400 times in 4 hours without once being able to speak to a human on the phone. While I was eventually able to contact them, I felt that this project still had merit as a proof of conecpt. 
+							 This project was born out of frustration after I called the EDD roughly 400 times in 4 hours without once being able to speak to a human on the phone. While I was eventually able to successfully contact them, I felt that this project still had merit as a proof of conecpt, and is not intended to be some sort of cry for employment as a result of my troubles with the EDD.
 							<hr />
 							<strong>That Being Said...</strong>
 							<hr />
 							
-							Now, you too can tangibly track your frustration! Why settle for simply ~feeling~ your soul be crushed under the weight of a system which is inadequately equipped to handle the current set of circumstances, when you could keep a record of your fruitless efforts {':^)'}
+							{/* Now, you too can tangibly track your frustration! Why settle for simply ~feeling~ your soul be crushed under the weight of a system which is inadequately equipped to handle the current set of circumstances, when you could keep a record of your fruitless efforts {':^)'}
 							<br /> 
-							<br />
+							<br /> */}
 							To use this application, simply create an account, or log in if you already have one, and begin tracking how many times you didn't talk to a EDD representitive! Divide your futile efforts into different categories such as "Disconnected from line due to high queue volume", "Dead air", or "Busy Signal"!
 							<br />
 							<br />

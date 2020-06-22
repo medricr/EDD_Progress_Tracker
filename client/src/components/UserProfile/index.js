@@ -124,7 +124,7 @@ class UserProfile extends React.Component {
 										</tbody>
 									</Table>
 									<br />
-									<Button onClick={() => this.deleteDay(item._id)} id="delete-btn" color='info'>Delete Ticket</Button>{' '}
+									<Button onClick={() => this.deleteDay(item._id)} id="delete-btn" color='info'>Delete Ticket</Button>
 								</ListGroupItem>
 							))}
 						</ListGroup>
